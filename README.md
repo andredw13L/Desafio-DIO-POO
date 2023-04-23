@@ -1,2 +1,2 @@
 # Desafio-DIO-POO
-*Praticando abstração, polimorfismo, herança e encapsulamento*
+*Praticando: Abstração, polimorfismo, herança e encapsulamento*
