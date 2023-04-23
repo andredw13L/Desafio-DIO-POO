@@ -2,6 +2,7 @@ import br.com.dio.desafio.dominio.*;
 
 import java.time.LocalDate;
 
+
 public class Main {
     public static void main(String[] args) {
         Curso curso1 = new Curso();
@@ -43,10 +44,24 @@ public class Main {
         bootcamp.getConteudos().add(curso2);
         bootcamp.getConteudos().add(mentoria);
 
+        Bootcamp prazo = new Bootcamp();
+
+        LocalDate prazoInicial = prazo.getDataInicial();
+
+        LocalDate prazoFinal = prazo.getDataFinal();
+
+
         Dev devAndre = new Dev();
 
         devAndre.setNome("André");
         devAndre.inscreverBootcamp(bootcamp);
+
+        if (prazoInicial.isAfter(prazoFinal)){
+            devAndre.prazoEncerradoBootcamp(bootcamp);
+        }
+
+
+
         System.out.println("\nConteúdos inscritos: " + devAndre.getConteudosInscritos());
         devAndre.progredir();
         devAndre.progredir();
@@ -67,6 +82,10 @@ public class Main {
         System.out.println("\nXP: " + devJoao.calcularTotalXP());
 
 
+
+        if (prazoInicial.isAfter(prazoFinal)){
+            devJoao.prazoEncerradoBootcamp(bootcamp);
+        }
 
     }
 }

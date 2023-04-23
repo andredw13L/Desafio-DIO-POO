@@ -16,6 +16,11 @@ public class Dev {
         bootcamp.getDevsInscritos().add(this);
     }
 
+    public void prazoEncerradoBootcamp(Bootcamp bootcamp) {
+        this.conteudosInscritos.removeAll(bootcamp.getConteudos());
+        bootcamp.getDevsInscritos().remove(this);
+    }
+
     public void progredir() {
         Optional<Conteudo> conteudo = this.conteudosInscritos.stream().findFirst();
         if (conteudo.isPresent()) {
@@ -56,6 +61,7 @@ public class Dev {
         this.conteudosConcluidos = conteudosConcluidos;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -67,5 +73,14 @@ public class Dev {
     @Override
     public int hashCode() {
         return Objects.hash(nome, conteudosInscritos, conteudosConcluidos);
+    }
+
+    @Override
+    public String toString() {
+        return "Dev{" +
+                "nome='" + nome + '\'' +
+                ", conteudosInscritos=" + conteudosInscritos +
+                ", conteudosConcluidos=" + conteudosConcluidos +
+                '}';
     }
 }
